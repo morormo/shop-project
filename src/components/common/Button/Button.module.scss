@@ -1,0 +1,27 @@
+@import "../../../styles/settings.scss";
+
+// .root {
+// }
+
+.white {
+  background-color: $button-color;
+  color: $button-main-bg;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 600;
+  padding: 15px 30px;
+  @include hover-animation;
+  border-radius: 3px;
+
+  &:hover {
+    color: $button-color;
+    border-top: 4px solid $bg-color-lightgreen;
+    background-color: $bg-color-darkgreen;
+    text-decoration: none;
+  }
+
+  a {
+    z-index: 1;
+    text-decoration: none;
+  }
+}

@@ -1,0 +1,51 @@
+$base-size: 12px;
+
+$bg-color-dark: #222f3e;
+$bg-color-light: #576574;
+
+$text-color-dark: #2a2a2a;
+$text-color-light: white;
+$text-color-prime: #ff6b6b;
+
+$bg-color-darkgreen: #253628;
+$bg-color-white: #fff;
+$bg-color-lightgreen: #C0CEB2;
+
+$product-photo-bg: #2a2a2a;
+
+
+$image-t-shirt: '../../public/photo/koszulka.jpg';
+
+
+@mixin hover-animation($all: false, $color-time: 0.125s, $bg-color-time: 0.125s) {
+  @if ($all) {
+    transition: all 0.125s;
+  } @else {
+    transition: color $color-time, background-color $bg-color-time;
+  }
+}
+
+/* DON'T USE THIS VARIABLES */
+$dark-gray: #2a2a2a;
+$second-dark-gray: rgb(42,42,42);
+$second-dark-gray-opacity: rgba(42,42,42,.4);
+$third-dark-gray: #292929;
+$light-gray: #b6b6b6;
+$second-light-gray: #e1e1e1;
+$third-light-gray: #f4f5f7;
+$fourth-light-gray: #e2e2e2;
+$fifth-light-gray: rgb(216, 216, 216);
+$sixth-light-gray: rgb(224, 227, 237);
+$seventh-light-gray: rgb(169, 169, 169);
+$eight-light-gray: #6a6a6a;
+$ninth-light-gray: #e8edf7;
+$tenth-light-gray: #fbf3f7;
+$white: #ffffff;
+$dark-opacity: rgba(1, 2, 2, 0.2);
+
+/*END*/
+
+/*BUTTON*/
+$button-main-bg: $dark-gray;
+$button-color: $white;
+$button-outline: $dark-gray;

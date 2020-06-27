@@ -1,16 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { PageNav } from '../PageNav/PageNav';
+import Items from '../../common/Items/Items';
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './Header.module.scss';
+import styles from './Homepage.module.scss';
+import FeatureBox from '../../features/FeatureBox/FeatureBox';
 
-const Component = ({className}) => (
+const Component = ({className, children}) => (
   <div className={(className, styles.root)}>
-    <PageNav />
+    <FeatureBox />
+    <Items />
   </div>
 );
 
@@ -30,7 +32,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Header,
-  // Container as Header,
-  Component as HeaderComponent,
+  Component as Homepage,
+  // Container as Homepage,
+  Component as HomepageComponent,
 };

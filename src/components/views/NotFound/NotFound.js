@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { PageNav } from '../PageNav/PageNav';
+
 
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './Header.module.scss';
+import styles from './NotFound.module.scss';
 
-const Component = ({className}) => (
+const Component = ({className, children}) => (
   <div className={(className, styles.root)}>
-    <PageNav />
+    <h2>NotFound</h2>
+    {children}
   </div>
 );
 
@@ -30,7 +31,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Header,
-  // Container as Header,
-  Component as HeaderComponent,
+  Component as NotFound,
+  // Container as NotFound,
+  Component as NotFoundComponent,
 };
