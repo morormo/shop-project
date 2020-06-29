@@ -1,26 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// import Items from '../../common/Items/Items';
-
 // import { connect } from 'react-redux';
 // import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
-import styles from './Homepage.module.scss';
-import FeatureBox from '../../features/FeatureBox/FeatureBox';
-import { Banner } from '../../features/Banner/Banner';
-import { Products } from '../../common/Products/Products';
+import styles from './Banner.module.scss';
 
-const Component = ({className, children}) => (
-  <div className={(className, styles.root)}>
-    <Banner />
-    <FeatureBox />
-    <Products />
+const Component = () => (
+  <div className={styles.root}>
+    <div className='container-fluid'>
+      <div className='row'>
+        <div className={`col ${styles.photo}`}>
+          <img src="/photo/banner.jpg" alt="banner"></img>
+        </div>
+      </div>
+    </div>
   </div>
 );
 
 Component.propTypes = {
-  children: PropTypes.node,
   className: PropTypes.string,
 };
 
@@ -35,7 +33,7 @@ Component.propTypes = {
 // const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
-  Component as Homepage,
-  // Container as Homepage,
-  Component as HomepageComponent,
+  Component as Banner,
+  // Container as Header,
+  Component as BannerComponent,
 };
