@@ -21,6 +21,7 @@ const Component = ({posts}) => (
             name={post.name}
             prize={post.prize}
             image={post.image}
+            id={post.id}
           />
         ))}
       </div>
@@ -43,7 +44,6 @@ const mapStateToProps = state => ({
 const Container = connect(mapStateToProps)(Component);
 
 export {
-  // Component as Post,
   Container as Products,
   Component as ProductsComponent,
 };

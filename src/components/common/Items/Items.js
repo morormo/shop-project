@@ -4,11 +4,11 @@ import styles from './Items.module.scss';
 
 import Button from '../Button/Button';
 
+import {Link} from 'react-router-dom';
 
-
-const Items = ({name, prize, image}) => {
+const Items = ({id, name, prize, image}) => {
   return (
-    <div className={`col-12 col-lg-4 ${styles.items}`}>
+    <Link to={`/product/${id}`} className={`col-12 col-lg-4 ${styles.items}`}>
       <div className={styles.photo}>
         <img src ={image} alt="koszulka"></img>
       </div>
@@ -19,11 +19,12 @@ const Items = ({name, prize, image}) => {
           <Button variant='white'>ADD TO CART</Button>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
 Items.propTypes ={
+  id: PropTypes.string,
   name: PropTypes.string,
   image: PropTypes.string,
   prize: PropTypes.string,
