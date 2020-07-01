@@ -8,14 +8,14 @@ import styles from './Products.module.scss';
 
 import Items from '../Items/Items';
 
-const Component = ({posts}) => (
+const Component = ({data}) => (
   <div className={styles.root}>
     <div className='container'>
       <div className={styles.subtitle}>
         <h2>Our Products</h2>
       </div>
       <div className='row'>
-        {posts.data.map(post => (
+        {data.map(post => (
           <Items
             key={post.id}
             name={post.name}
@@ -30,11 +30,11 @@ const Component = ({posts}) => (
 );
 
 Component.propTypes = {
-  posts: PropTypes.object,
+  data: PropTypes.object,
 };
 
 const mapStateToProps = state => ({
-  posts: state.posts,
+  data: state.data,
 });
 
 // const mapDispatchToProps = dispatch => ({
