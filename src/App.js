@@ -13,7 +13,7 @@ import { NotFound } from './components/views/NotFound/NotFound';
 
 import './styles/bootstrap.scss';
 import './styles/global.scss';
-import { Product } from './components/views/Product/Product';
+import Product from './components/views/Product/Product';
 
 const theme = createMuiTheme({
   palette: {
@@ -30,7 +30,7 @@ const App = () => (
           <MainLayout>
             <Switch>
               <Route exact path='/' component={Homepage} />
-              <Route path={'/product/:id'} component={Product} />
+              <Route exact path={'/product/:id'} component={Product} />
               <Route path='*' component={NotFound} />
             </Switch>
           </MainLayout>
