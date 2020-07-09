@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './Items.module.scss';
 
-import Button from '../Button/Button';
+import AddToCart from '../../features/AddToCart/AddToCartContainer';
 
 import {Link} from 'react-router-dom';
 
@@ -14,9 +14,11 @@ const Items = ({id, name, prize, image}) => {
       </div>
       <div className={styles.content}>
         <h3>{name}</h3>
-        <span>{prize}</span>
+        <span>{prize}PLN</span>
         <div className={styles.button}>
-          <Button variant='white'>ADD TO CART</Button>
+          <div>
+            <AddToCart product={id, name, prize, image} counter='hidden' btn='' />
+          </div>
         </div>
       </div>
     </Link>

@@ -25,3 +25,23 @@
     text-decoration: none;
   }
 }
+.small {
+  background-color: $button-color;
+  color: $button-main-bg;
+  font-size: 14px;
+  line-height: 12px;
+  padding: 7px 15px;
+  @include hover-animation;
+  border-radius: 2px;
+
+  &:hover {
+    border: 2px solid $bg-color-lightgreen;
+    text-decoration: none;
+  }
+
+  a {
+    z-index: 1;
+    text-decoration: none;
+  }
+
+}

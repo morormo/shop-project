@@ -1,0 +1,68 @@
+.item {
+  border: 1px solid black;
+  margin: 2rem 0;
+  padding: 1rem;
+  border-radius: 3px;
+
+  button {
+    background-color: white;
+    border: 0;
+    font-weight: bold;
+  }
+}
+
+.image {
+  img {
+    padding-right: 2rem ;
+    max-width: 10rem;
+    max-height: 10rem;
+  }
+}
+
+.prize {
+  font-weight: bold;
+  color: red;
+}
+
+.continue, .end {
+  max-width: 90%;
+  margin: 2rem auto;
+  text-align: center;
+  background-color: black;
+  letter-spacing: 2px;
+  padding: 1rem 0;
+  font-weight: bold;
+  a {
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+      text-decoration: none;
+      color: #767677;
+    }
+  }
+}
+.or {
+  text-align: center;
+}
+
+.summary {
+  border: 1px solid #ebedee;
+  padding: 24px 15px;
+
+
+  h5 {
+  font-size: 20px;
+  line-height: 18px;
+  font-weight: bold;
+  padding: 12px;
+  }
+}
+
+.summaryitem {
+  font-size: 14px;
+  line-height: 20px;
+  margin-bottom: 14px;
+}
+
+

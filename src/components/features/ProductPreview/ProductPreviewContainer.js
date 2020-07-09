@@ -6,5 +6,8 @@ const mapStateToProps = (state, props) => ({
   product: getProduct(state, props.id),
 });
 
+const mapDispatchToProps = dispatch => ({
 
-export default connect(mapStateToProps)(ProductPreview);
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProductPreview);

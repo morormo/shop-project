@@ -10,10 +10,12 @@ import { store } from './redux/store';
 import { MainLayout } from './components/layout/MainLayout/MainLayout';
 import { Homepage } from './components/views/Homepage/Homepage';
 import { NotFound } from './components/views/NotFound/NotFound';
+import CartPage from './components/views/CartPage/CartPageContainer';
 
 import './styles/bootstrap.scss';
 import './styles/global.scss';
 import Product from './components/views/Product/Product';
+import DeliveryPage from './components/views/DeliveryPage/DeliveryPage';
 
 const theme = createMuiTheme({
   palette: {
@@ -30,7 +32,9 @@ const App = () => (
           <MainLayout>
             <Switch>
               <Route exact path='/' component={Homepage} />
-              <Route exact path={'/product/:id'} component={Product} />
+              <Route path={'/product/:id'} component={Product} />
+              <Route path={'/cart/:id?'} component={CartPage} />
+              <Route path={'/delivery'} component={DeliveryPage} />
               <Route path='*' component={NotFound} />
             </Switch>
           </MainLayout>
