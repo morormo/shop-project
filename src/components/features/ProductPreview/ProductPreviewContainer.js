@@ -3,7 +3,7 @@ import { getProduct } from '../../../redux/postsRedux';
 import ProductPreview from './ProductPreview';
 
 const mapStateToProps = (state, props) => ({
-  product: getProduct(state, props.id),
+  post: getProduct(state, props.id),
 });
 
 const mapDispatchToProps = dispatch => ({

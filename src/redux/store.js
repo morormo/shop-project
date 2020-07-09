@@ -1,14 +1,13 @@
 import {combineReducers, createStore, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-
+import postsRedux from './postsRedux';
 import { initialState } from './initialState';
-import { reducer as postsReducer } from './postsRedux';
 import cartRedux from './cartRedux';
 
 // define reducers
 const reducers = {
-  posts: postsReducer,
+  posts: postsRedux,
   cart: cartRedux,
 };
 

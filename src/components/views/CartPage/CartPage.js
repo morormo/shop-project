@@ -11,11 +11,11 @@ class CartPage extends React.Component {
   }
 
   render() {
-    const { cartItems } = this.props.cart;
+    // const cartItems = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : [];
+    const cartItems = this.props.cart.cartItems;
     return (
       <div className='container'>
         <h1>TWÓJ KOSZYK</h1>
-        <span>ŁĄCZNIE ({cartItems.length} produkt)</span>
         <div className='row'>
           <div className={`col-lg-6`}>
             {cartItems.length === 0 ?
@@ -24,7 +24,7 @@ class CartPage extends React.Component {
               </div>
               :
               cartItems.map(item =>
-                <div key={item.id} className={`row ${styles.item}`}>
+                <div key={item._id} className={`row ${styles.item}`}>
                   <div className={`col-3 ${styles.image}`}>
                     <img src={item.image} alt={item.name} />
                   </div>
@@ -37,7 +37,7 @@ class CartPage extends React.Component {
                         {item.prize}PLN
                       </div>
                       <div className='col-1'>
-                        <button type="button" className="button" onClick={this.removeFromCart.bind(this, item.id)} >
+                        <button type="button" className="button" onClick={this.removeFromCart.bind(this, item._id)} >
                           X
                         </button>
                       </div>

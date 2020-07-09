@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 import styles from './Homepage.module.scss';
 import FeatureBox from '../../features/FeatureBox/FeatureBox';
 import { Banner } from '../../features/Banner/Banner';
-import { Products } from '../../common/Products/Products';
+import Products from '../../common/Products/ProductsContainer';
 
 const Component = ({className, children}) => (
   <div className={(className, styles.root)}>

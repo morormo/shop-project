@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from './AD.module.scss';
 
-const AD = ({ name, prize, image}) => {
+const AD = ({ name, price, image}) => {
   return (
     <div className='row'>
       <div className={`col-6 ${styles.photo}`}>
         <img src={image} alt={name}></img>
       </div>
       <div className={`col-6 ${styles.specyfication}`}>
-        <h3>{prize}</h3>
+        <h3>{price}</h3>
         <div className='row'>
           <div className='col-4'>
             Rozmiar
@@ -44,7 +44,7 @@ const AD = ({ name, prize, image}) => {
 AD.propTypes ={
   name: PropTypes.string,
   image: PropTypes.string,
-  prize: PropTypes.string,
+  price: PropTypes.string,
 };
 
 export default AD;

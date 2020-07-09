@@ -6,9 +6,11 @@ import AddToCart from '../AddToCart/AddToCartContainer';
 
 class ProductPreview extends React.Component {
   render() {
-    const { name, prize, image} = this.props.product;
+    const { name, image, price } = this.props.post;
+
 
     return (
+
       <div className='root'>
         <div className='container'>
           <div className='row align-items-center'>
@@ -18,7 +20,7 @@ class ProductPreview extends React.Component {
             <div className={`col-12 col-lg-6 ${styles.specyfication}`}>
               <div className={styles.header}>
                 <h1>{name}</h1>
-                <h4>{prize}</h4>
+                <h4>{price}</h4>
               </div>
               <div className={styles.body}>
                 <div className='row align-items-center'>
@@ -34,7 +36,7 @@ class ProductPreview extends React.Component {
                   </div>
                   <div className='col-6'>
 
-                    <AddToCart product={this.props.product} btn='small' counter='' />
+                    <AddToCart post={this.props.post} btn='small' counter='' />
                   </div>
                 </div>
               </div>
@@ -65,7 +67,7 @@ class ProductPreview extends React.Component {
 
 
 ProductPreview.propTypes = {
-  product: propTypes.array,
+  post: propTypes.object,
 };
 
 export default ProductPreview;

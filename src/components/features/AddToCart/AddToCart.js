@@ -27,8 +27,9 @@ class AddToCart extends React.Component {
     });
   }
 
-  handleAddToCart = (data) => {
-    this.props.addToCart(data, this.state.CartQuantity);
+  handleAddToCart = (e, post) => {
+    e.preventDefault();
+    this.props.addToCart(post, this.state.CartQuantity);
     this.props.history.push('/cart');
 
   }
@@ -41,7 +42,7 @@ class AddToCart extends React.Component {
   }
 
   render() {
-    const { countInStock } = this.props.product;
+    const { countInStock } = this.props.post;
     const { counter, btn } = this.props;
     return (
       <div className='container' >
@@ -52,8 +53,8 @@ class AddToCart extends React.Component {
             <button disabled={this.state.CartQuantity >= countInStock} onClick={this.handleIncrease}>+</button>
           </div>
           <div className={btn.split(' ').map((name) => ' ' + (styles[name] || name)).join('')}>
-            <Button variant='small' click={this.handleAddToCart.bind(this, this.props.product)}>
-              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+            <Button className={styles.options} variant='small' click={(e) => this.handleAddToCart(e, this.props.post)}>
+              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> Dodaj do koszyka
             </Button>
           </div>
         </div >
@@ -63,7 +64,7 @@ class AddToCart extends React.Component {
 }
 
 AddToCart.propTypes = {
-  product: PropTypes.object,
+  post: PropTypes.object,
   addToCart: PropTypes.func,
   history: PropTypes.object,
   counter: PropTypes.node,

@@ -13,6 +13,49 @@ export const REMOVE_FROM_CART = createActionName('REMOVE_FROM_CART');
 export const createActionAddToCart = (payload, qty) => ({ payload: { ...payload, qty: qty }, type: ADD_TO_CART });
 export const createActionRemoveFromCart = payload => ({ payload, type: REMOVE_FROM_CART });
 
+/* thunk creators */
+
+export const addCartToStorage = (post, qty) => {
+  return async dispatch => {
+
+    //add cartProducts to localStorage
+    let cart = [];
+    let cartProducts = [];
+
+    cartProducts = JSON.parse(localStorage.getItem('cart'));
+    if (cartProducts === null) {
+      cart = [{ _id: post._id, name: post.name, image: post.image, price: post.price, qty: qty }];
+      localStorage.setItem('cart', JSON.stringify(cart));
+    } else {
+      cart = JSON.parse(localStorage.getItem('cart'));
+      cart.push({ _id: post._id, name: post.name, image: post.image, price: post.price, qty: qty });
+
+      localStorage.setItem('cart', JSON.stringify(cart));
+
+    }
+      // add cartProducts to state
+      dispatch(createActionAddToCart(post, qty));
+    };
+  };
+
+export const removeCartFormLocalStorage = (id) => {
+  return dispatch => {
+
+    //remove item form LocalStorage
+    let cart;
+    const cartProducts = JSON.parse(localStorage.getItem('cart'));
+    localStorage.removeItem('cart');
+
+    (cartProducts !== null) && (cart = cartProducts.filter(item => item._id !== id));
+
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    //remove item form state
+    dispatch(createActionRemoveFromCart(id));
+  };
+};
+
+
 /* reducer */
 export default function reducer(statePart = [], action = {}) {
   switch (action.type) {

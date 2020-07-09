@@ -1,56 +1,94 @@
+import axios from 'axios';
+import { API_URL } from '../config';
+
 /* selectors */
-export const getAll = ({posts}) => posts.data;
+export const getProducts = ({ posts }) => posts.data;
+export const getProduct = ({ posts }, id) => posts.data.find(post => post._id === id);
 
-export const getProduct = ({ data }, id) => data.find(product => product.id === id);
-
-/* action name creator */
+// action name creator
 const reducerName = 'posts';
 const createActionName = name => `app/${reducerName}/${name}`;
 
-/* action types */
-const FETCH_START = createActionName('FETCH_START');
-const FETCH_SUCCESS = createActionName('FETCH_SUCCESS');
-const FETCH_ERROR = createActionName('FETCH_ERROR');
+// action types
+const START_REQUEST = createActionName('START_REQUEST');
+const END_REQUEST = createActionName('END_REQUEST');
+const ERROR_REQUEST = createActionName('ERROR_REQUEST');
 
-/* action creators */
-export const fetchStarted = payload => ({ payload, type: FETCH_START });
-export const fetchSuccess = payload => ({ payload, type: FETCH_SUCCESS });
-export const fetchError = payload => ({ payload, type: FETCH_ERROR });
+export const LOAD_PRODUCTS = createActionName('LOAD_PRODUCTS');
+
+// action creators
+export const startRequest = payload => ({ payload, type: START_REQUEST });
+export const endRequest = payload => ({ payload, type: END_REQUEST });
+export const errorRequest = payload => ({ payload, type: ERROR_REQUEST });
+
+export const loadProducts = payload => ({ payload, type: LOAD_PRODUCTS });
 
 /* thunk creators */
+export const loadProductsRequest = () => {
+  return async dispatch => {
+
+    dispatch(startRequest({ name: LOAD_PRODUCTS }));
+    try {
+      let res = await axios.get(`${API_URL}/products`);
+
+      dispatch(loadProducts(res.data));
+      dispatch(endRequest({ name: LOAD_PRODUCTS }));
+    } catch (e) {
+      dispatch(errorRequest({ name: LOAD_PRODUCTS, error: e.message }));
+    }
+  };
+};
+
 
 /* reducer */
-export const reducer = (statePart = [], action = {}) => {
+export default function reducer(statePart = [], action = {}) {
   switch (action.type) {
-    case FETCH_START: {
+    case START_REQUEST: {
       return {
         ...statePart,
-        loading: {
-          active: true,
-          error: false,
+        requests: {
+          ...statePart.requests,
+          [action.payload.name]: {
+            pending: true,
+            error: null,
+            success: false,
+          },
         },
       };
     }
-    case FETCH_SUCCESS: {
+    case END_REQUEST: {
       return {
         ...statePart,
-        loading: {
-          active: false,
-          error: false,
+        requests: {
+          ...statePart.requets,
+          [action.payload.name]: {
+            pending: false,
+            error: null,
+            success: true,
+          },
         },
-        data: action.payload,
       };
     }
-    case FETCH_ERROR: {
+    case ERROR_REQUEST: {
       return {
         ...statePart,
-        loading: {
-          active: false,
-          error: action.payload,
+        requests: {
+          ...statePart.requests,
+          [action.payload.name]: {
+            pending: false,
+            error: action.payload.message,
+            success: false,
+          },
         },
+      };
+    }
+    case LOAD_PRODUCTS: {
+      return {
+        ...statePart,
+        data: [...action.payload],
       };
     }
     default:
       return statePart;
   }
-};
+}

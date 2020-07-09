@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { getShoppingCart, createActionRemoveFromCart } from '../../../redux/cartRedux';
+import { getShoppingCart, removeCartFormLocalStorage } from '../../../redux/cartRedux';
 import CartPage from './CartPage';
 
 const mapStateToProps = (state, props) => ({
@@ -9,7 +9,7 @@ const mapStateToProps = (state, props) => ({
 );
 
 const mapDispatchToProps = dispatch => ({
-  removeFromCart: id => dispatch(createActionRemoveFromCart(id)),
+  removeFromCart: id => dispatch(removeCartFormLocalStorage(id)),
 });
 
 
