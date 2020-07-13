@@ -17,29 +17,29 @@ const FeatureBox = () => {
         <div className='row justify-content-center'>
           <div className='col-xs-12 col-lg-3'>
             <div className={`col-12 ${styles.box}`}>
-              <h5>Free Shiping</h5>
-              <p>Orders over 100$</p>
+              <h5>Darmowa dostawa</h5>
+              <p>od 100zł</p>
               <FontAwesomeIcon className={styles.icon} icon={faTruck} />
             </div>
           </div>
           <div className='col-xs-12 col-lg-3'>
             <div className={`col-12 ${styles.box}`}>
-              <h5>24/7 Customer</h5>
-              <p>Support</p>
+              <h5>24/7 Wsparcie</h5>
+              <p>Klienta</p>
               <FontAwesomeIcon className={styles.icon} icon={faHeadphones} />
             </div>
           </div>
           <div className='col-xs-12 col-lg-3'>
             <div className={`col-12 ${styles.box}`}>
-              <h5>Money back</h5>
-              <p>Gurante</p>
+              <h5>Kupony</h5>
+              <p>Lojalnościowe</p>
               <FontAwesomeIcon className={styles.icon} icon={faReplyAll} />
             </div>
           </div>
           <div className='col-xs-12 col-lg-3'>
             <div className={`col-12 ${styles.box}`}>
-              <h5>Member Discount</h5>
-              <p>First Order</p>
+              <h5>Karta klienta</h5>
+              <p>Dla pierwszych zleceń</p>
               <FontAwesomeIcon className={styles.icon} icon={faBullhorn} />
             </div>
           </div>

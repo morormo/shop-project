@@ -1,11 +1,12 @@
 @import "../../../styles/settings.scss";
 
-.shoppingQty {
+.addToCart {
   button {
-    padding: 0px 10px;
-    margin: 0px 10px;
-    border: 1px solid black;
-    font-size: 1.2rem;
+    padding: 0px 5px;
+    margin: 0px 5px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    background: transparent;
   }
 }
 

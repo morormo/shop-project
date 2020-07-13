@@ -8,7 +8,7 @@ const mapStateToProps = (state, props) => ({
 );
 
 const mapDispatchToProps = dispatch => ({
-  addToCart: (post, qty) => (addCartToStorage(post, qty)),
+  addToCart: (post, qty) => dispatch(addCartToStorage(post, qty)),
 });
 
 

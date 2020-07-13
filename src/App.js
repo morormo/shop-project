@@ -10,7 +10,7 @@ import './styles/bootstrap.scss';
 import './styles/global.scss';
 import Product from './components/views/Product/Product';
 import DeliveryPage from './components/views/DeliveryPage/DeliveryPage';
-
+import {AnimatedSwitch} from 'react-router-transition';
 
 class App extends Component {
   componentDidMount() {
@@ -21,11 +21,17 @@ class App extends Component {
     return (
       <MainLayout>
         <Switch>
-          <Route exact path='/' component={Homepage} />
-          <Route path={'/product/:id'} component={Product} />
-          <Route path={'/cart/:id?'} component={CartPage} />
-          <Route path={'/delivery'} component={DeliveryPage} />
-          <Route path='*' component={NotFound} />
+          <AnimatedSwitch
+            atEnter={{ opacity: 0 }}
+            atLeave={{ opacity: 0 }}
+            atActive={{ opacity: 1 }}
+          >
+              <Route exact path='/' component={Homepage} />
+              <Route path={'/product/:id'} component={Product} />
+              <Route path={'/cart/:id?'} component={CartPage} />
+              <Route path={'/delivery'} component={DeliveryPage} />
+              <Route path='*' component={NotFound} />
+          </AnimatedSwitch>
         </Switch>
       </MainLayout>
     );

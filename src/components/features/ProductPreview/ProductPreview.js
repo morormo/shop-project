@@ -25,17 +25,15 @@ class ProductPreview extends React.Component {
               <div className={styles.body}>
                 <div className='row align-items-center'>
                   <div className='col-3 justify-content-center'>
-                    <label>Rozmiar</label>
-                    <select className='form-control'>
-                      <option selected>XS</option>
-                      <option>S</option>
-                      <option>M</option>
-                      <option>L</option>
-                      <option>XL</option>
+                    <select className='form-control' defaultValue={'XS'}>
+                      <option value="XS">XS</option>
+                      <option value="S">S</option>
+                      <option value="M">M</option>
+                      <option value="L">L</option>
+                      <option value="XL">XL</option>
                     </select>
                   </div>
-                  <div className='col-6'>
-
+                  <div className='col-9'>
                     <AddToCart post={this.props.post} btn='small' counter='' />
                   </div>
                 </div>

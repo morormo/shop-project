@@ -4,6 +4,7 @@
 .root {
   :global(.container) > :global(.row) {
     height: 80px;
+    margin-bottom: 2rem;
   }
 
   .menu {

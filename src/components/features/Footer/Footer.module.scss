@@ -5,22 +5,23 @@
   background-color: $bg-color-darkgreen;
   padding: 20px 0;
   text-align: center;
+  margin-top: 2rem;
 
   .subtitle {
     color:$bg-color-lightgreen;
     font-size: 24px;
     padding: 0;
     font-weight: bold;
-
   }
+
   .menu ul {
     margin: 10px 0;
     padding: 0;
 
-
     li {
     list-style: none;
     color: white;
+
       a{
         text-decoration: none;
         color: $bg-color-lightgreen;
@@ -31,11 +32,12 @@
       }
     }
   }
+
   .copycontainer {
     margin-top: 20px;
+
     .copyright {
       color :#EBEBE9;
-
     }
   }
 }

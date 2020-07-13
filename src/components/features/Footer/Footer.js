@@ -1,10 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
-
-
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
 
 import styles from './Footer.module.scss';
 
@@ -14,84 +9,84 @@ const Component = () => (
       <div className='row'>
         <div className='col-6 col-lg-3'>
           <span className={styles.subtitle}>
-            Information
+            Informacje
           </span>
           <div className={styles.menu}>
             <ul>
               <li>
-                <a href='#'>About us</a>
+                <a href='#about'>O nas</a>
               </li>
               <li>
-                <a href='#'>Policy</a>
+                <a href='#policy'>Polityka</a>
               </li>
               <li>
-                <a href='#'>Conditions</a>
+                <a href='#conditions'>Warunki</a>
               </li>
               <li>
-                <a href='#'>Online Support</a>
+                <a href='#shop'>Online Support</a>
               </li>
             </ul>
           </div>
         </div>
         <div className='col-6 col-lg-3'>
           <span className={styles.subtitle}>
-            Account
+            Konto
           </span>
           <div className={styles.menu}>
             <ul>
               <li>
-                <a href='#'>Login</a>
+                <a href='#login'>Zaloguj</a>
               </li>
               <li>
-                <a href='#'>My Cart</a>
+                <a href='cart'>Mój koszyk</a>
               </li>
               <li>
-                <a href='#'>Wishlist</a>
+                <a href='#wishlist'>Lista życzeń</a>
               </li>
               <li>
-                <a href='#'>Checkout</a>
+                <a href='#checkout'>Checkout</a>
               </li>
             </ul>
           </div>
         </div>
         <div className='col-6 col-lg-3'>
           <span className={styles.subtitle}>
-            Information
+            Informacje
           </span>
           <div className={styles.menu}>
             <ul>
               <li>
-                <a href='#'>Specials</a>
+                <a href='#specials'>Promocje</a>
               </li>
               <li>
-                <a href='#'>New Product</a>
+                <a href='#newproducts'>Nowe Produkty</a>
               </li>
               <li>
-                <a href='#'>Best Sellers</a>
+                <a href='#best'>Na Topie</a>
               </li>
               <li>
-                <a href='#'>Out Stores</a>
+                <a href='#stories'>Wyprzedaż</a>
               </li>
             </ul>
           </div>
         </div>
         <div className='col-6 col-lg-3'>
           <span className={styles.subtitle}>
-            Orders
+            Zamówienie
           </span>
           <div className={styles.menu}>
             <ul>
               <li>
-                <a href='#'>Payment options</a>
+                <a href='#payment'>Opcje płatności</a>
               </li>
               <li>
-                <a href='#'>Shipping and delivery</a>
+                <a href='#delivery'>Dostawa</a>
               </li>
               <li>
-                <a href='#'>Returns</a>
+                <a href='#returns'>Zwrot</a>
               </li>
               <li>
-                <a href='#'>Shipping</a>
+                <a href='#shipping'>Wysyłka</a>
               </li>
             </ul>
           </div>

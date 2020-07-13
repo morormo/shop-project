@@ -3,8 +3,14 @@ const express = require('express');
 const cors = require('cors');
 const path = require('path');
 const mongoose = require('mongoose');
+const Fixtures = require('node-mongodb-fixtures');
+
+const fixtures = new Fixtures({
+  dir: path.resolve(path.join(__dirname, 'fixtures')),
+});
 
 const productsRoutes = require('./routes/products.routes');
+const ProductModel = require('./models/product.model');
 
 const app = express();
 
@@ -30,9 +36,22 @@ app.use('*', (req, res) => {
 /* MONGOOSE */
 mongoose.connect('mongodb://localhost:27017/shopproject', { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
-db.once('open', () => {
+
+db.once('open', async () => {
   console.log('Successfully connected to the database');
+
+  const products = await ProductModel.find();
+
+  if (!products.length) {
+    fixtures
+      .connect('mongodb://localhost:27017/shopproject', { useNewUrlParser: true, useUnifiedTopology: true })
+      .then(() => fixtures.unload())
+      .then(() => fixtures.load())
+      .then(() => fixtures.disconnect());
+  }
+
 });
+
 db.on('error', err => console.log('Error: ' + err));
 
 /* START SERVER */

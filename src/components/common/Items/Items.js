@@ -18,10 +18,9 @@ class Items extends React.Component {
           </div>
           <div className={styles.content}>
             <h3>{post.name}</h3>
-            <span>{post.prize}PLN</span>
+            <span>{post.price}PLN</span>
             <div className={styles.button}>
             <div>
-                {/* <AddToCart post={post} counter='hidden' btn='' /> */}
               </div>
             </div>
           </div>

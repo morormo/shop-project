@@ -18,30 +18,27 @@ export const createActionRemoveFromCart = payload => ({ payload, type: REMOVE_FR
 export const addCartToStorage = (post, qty) => {
   return async dispatch => {
 
-    //add cartProducts to localStorage
     let cart = [];
     let cartProducts = [];
 
     cartProducts = JSON.parse(localStorage.getItem('cart'));
     if (cartProducts === null) {
-      cart = [{ _id: post._id, name: post.name, image: post.image, price: post.price, qty: qty }];
+      cart = [{ _id: post._id, name: post.name, image: post.image, price: post.price, qty: qty, countInStock: post.countInStock }];
       localStorage.setItem('cart', JSON.stringify(cart));
     } else {
       cart = JSON.parse(localStorage.getItem('cart'));
-      cart.push({ _id: post._id, name: post.name, image: post.image, price: post.price, qty: qty });
+      cart.push({ _id: post._id, name: post.name, image: post.image, price: post.price, qty: qty, countInStock: post.countInStock });
 
       localStorage.setItem('cart', JSON.stringify(cart));
 
     }
-      // add cartProducts to state
-      dispatch(createActionAddToCart(post, qty));
-    };
+    dispatch(createActionAddToCart(post, qty));
   };
+};
 
 export const removeCartFormLocalStorage = (id) => {
   return dispatch => {
 
-    //remove item form LocalStorage
     let cart;
     const cartProducts = JSON.parse(localStorage.getItem('cart'));
     localStorage.removeItem('cart');
@@ -50,7 +47,6 @@ export const removeCartFormLocalStorage = (id) => {
 
     localStorage.setItem('cart', JSON.stringify(cart));
 
-    //remove item form state
     dispatch(createActionRemoveFromCart(id));
   };
 };

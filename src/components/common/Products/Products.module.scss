@@ -5,10 +5,10 @@
   :global(.container) > :global(.row) {
     height: 100%;
   }
+
   .subtitle {
     margin: 50px 0;
     color: $bg-color-darkgreen;
     border-bottom: 2px solid $bg-color-lightgreen;
-
   }
 }

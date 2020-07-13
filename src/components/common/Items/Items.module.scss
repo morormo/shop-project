@@ -12,17 +12,28 @@
   width: 100%;
   margin: 20px 0;
 
+  a {
+    text-decoration: none;
+    color: $bg-color-darkgreen;
+
+    &:hover {
+      text-decoration: none;
+      color: $bg-color-lightgreen;
+    }
+  }
+
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
     background: {
-      color: $product-photo-bg;
+      color: white;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
     overflow: hidden;
     align-items: flex-end;
+
     img {
       position: absolute;
       top: 0;
@@ -31,6 +42,7 @@
       height: 100%;
     }
   }
+
   .content {
     text-align: center;
 
@@ -39,4 +51,6 @@
     }
   }
 }
+
+
 

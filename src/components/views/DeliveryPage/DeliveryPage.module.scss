@@ -9,10 +9,10 @@
   padding-bottom: 10px;
   margin-bottom: 2rem;
 
-
   .information {
     margin-bottom: 30px;
   }
+
   input {
     border-radius: 0;
     border-color: #767677;
@@ -33,7 +33,6 @@
     padding-left: 20px;
     text-align: left;
   }
-
 }
 
 .delivery {
@@ -42,6 +41,7 @@
   padding-bottom: 10px;
   margin: 1rem 0;
   text-align: center;
+
   .box {
     border-top: 2px dashed #767677;
     padding-top: 10px;
@@ -72,6 +72,37 @@
   }
 }
 
+.btnLogin {
+  border: 0;
+  background-color: black;
+  width: 100%;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    color: #767677;
+  }
+}
+
+.btnPay {
+  border: 0;
+  background-color: black;
+  width: 100%;
+  color: white;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  &:hover {
+    color: #767677;
+  }
+}
 
 
 

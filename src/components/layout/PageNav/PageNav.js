@@ -5,10 +5,6 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
 
-
-// import { connect } from 'react-redux';
-// import { reduxSelector, reduxActionCreator } from '../../../redux/exampleRedux.js';
-
 import styles from './PageNav.module.scss';
 
 const Component = () => (
@@ -24,7 +20,9 @@ const Component = () => (
               <Link to={`${process.env.PUBLIC_URL}/`} className={styles.active} >Home</Link>
             </li>
             <li>
-              <a href='#'><FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />Cart</a>
+              <Link to={`${process.env.PUBLIC_URL}/cart`}>
+                <FontAwesomeIcon className={styles.icon} icon={faShoppingBasket} />Cart
+              </Link>
             </li>
           </ul>
         </div>
@@ -36,16 +34,6 @@ const Component = () => (
 Component.propTypes = {
   className: PropTypes.string,
 };
-
-// const mapStateToProps = state => ({
-//   someProp: reduxSelector(state),
-// });
-
-// const mapDispatchToProps = dispatch => ({
-//   someAction: arg => dispatch(reduxActionCreator(arg)),
-// });
-
-// const Container = connect(mapStateToProps, mapDispatchToProps)(Component);
 
 export {
   Component as PageNav,

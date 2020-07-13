@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Biała koszulka",
+    "price": "129.99",
+    "image": "/photo/koszulka.jpg",
+    "countInStock": 3
+  },
+  {
+    "id": 2,
+    "name": "Biała bluza",
+    "price": "229.99",
+    "image": "/photo/bluza.jpg",
+    "countInStock": 2
+  },
+  {
+    "id": 3,
+    "name": "Biały kubek",
+    "price": "69.99",
+    "image": "/photo/kubek.jpg",
+    "countInStock": 5
+  }
+]

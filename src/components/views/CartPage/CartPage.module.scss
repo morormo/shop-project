@@ -1,8 +1,23 @@
+.container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.empty {
+  height: 30vh;
+}
+
 .item {
   border: 1px solid black;
   margin: 2rem 0;
   padding: 1rem;
   border-radius: 3px;
+
+  input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+  }
 
   button {
     background-color: white;
@@ -13,8 +28,7 @@
 
 .image {
   img {
-    padding-right: 2rem ;
-    max-width: 10rem;
+    max-width: 5rem;
     max-height: 10rem;
   }
 }
@@ -32,6 +46,7 @@
   letter-spacing: 2px;
   padding: 1rem 0;
   font-weight: bold;
+
   a {
     text-decoration: none;
     color: white;
@@ -42,6 +57,7 @@
     }
   }
 }
+
 .or {
   text-align: center;
 }
@@ -49,7 +65,6 @@
 .summary {
   border: 1px solid #ebedee;
   padding: 24px 15px;
-
 
   h5 {
   font-size: 20px;
@@ -64,5 +79,3 @@
   line-height: 20px;
   margin-bottom: 14px;
 }
-
-

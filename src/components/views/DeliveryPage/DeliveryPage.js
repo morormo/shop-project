@@ -10,7 +10,7 @@ class DeliveryPage extends React.Component {
       <div className={styles.root}>
         <div className={`container ${styles.container}`}>
           <div className='row'>
-            <div className='col-8'>
+            <div className='col-12 col-lg-8'>
               <div className='row'>
                 <div className='col-12'>
                   <h4>ADRES DOSTAWY</h4>
@@ -78,7 +78,7 @@ class DeliveryPage extends React.Component {
                 </div>
               </div>
             </div>
-            <div className='col-4'>
+            <div className='col-12 col-lg-4'>
               <div className={styles.login}>
                 <h4>ZALOGUJ SIĘ</h4>
                 <form>
@@ -90,7 +90,7 @@ class DeliveryPage extends React.Component {
                       <input type="password" className="form-control" id="inputPassword" placeholder="Hasło" name='password' />
                     </div>
                     <div className='col-12'>
-                      <button type="submit" className="btn btn-login">Zaloguj się</button>
+                      <button type="submit" className={styles.btnLogin}>Zaloguj się</button>
                     </div>
                   </div>
                 </form>
@@ -116,8 +116,11 @@ class DeliveryPage extends React.Component {
                   </div>
                 </form>
               </div>
-            </div>
+              <button className={styles.btnPay}>
+                Zapłać
+              </button>
           </div>
+            </div>
         </div>
       </div >
     );

@@ -9,27 +9,27 @@ import { PropTypes } from 'prop-types';
 class AddToCart extends React.Component {
 
   state = {
-    CartQuantity: 1,
+    cartQuantity: 1,
   }
 
 
   handleDecrease = (e) => {
     e.preventDefault();
     this.setState({
-      CartQuantity: this.state.CartQuantity - 1,
+      cartQuantity: this.state.cartQuantity - 1,
     });
   }
 
   handleIncrease = (e) => {
     e.preventDefault();
     this.setState({
-      CartQuantity: this.state.CartQuantity + 1,
+      cartQuantity: this.state.cartQuantity + 1,
     });
   }
 
   handleAddToCart = (e, post) => {
     e.preventDefault();
-    this.props.addToCart(post, this.state.CartQuantity);
+    this.props.addToCart(post, this.state.cartQuantity);
     this.props.history.push('/cart');
 
   }
@@ -37,7 +37,7 @@ class AddToCart extends React.Component {
   componentDidMount() {
     const { value } = this.props;
     value && this.setState({
-      CartQuantity: value,
+      cartQuantity: value,
     });
   }
 
@@ -47,12 +47,12 @@ class AddToCart extends React.Component {
     return (
       <div className='container' >
         <div className='row'>
-          <div className={counter.split(' ').map((name) => ' ' + (styles[name] || name)).join('')}>
-            <button disabled={this.state.CartQuantity === 1 ? true : false} onClick={this.handleDecrease}>-</button>
-            <span> {this.state.CartQuantity}</span>
-            <button disabled={this.state.CartQuantity >= countInStock} onClick={this.handleIncrease}>+</button>
+          <div className={styles.addToCart + counter.split(' ').map((name) => ' ' + (styles[name] || name)).join('')}>
+            <button disabled={this.state.cartQuantity === 1 ? true : false} onClick={this.handleDecrease}>-</button>
+            <span> {this.state.cartQuantity}</span>
+            <button disabled={this.state.cartQuantity >= countInStock} onClick={this.handleIncrease}>+</button>
           </div>
-          <div className={btn.split(' ').map((name) => ' ' + (styles[name] || name)).join('')}>
+          <div className={styles.addToCart + btn.split(' ').map((name) => ' ' + (styles[name] || name)).join('')}>
             <Button className={styles.options} variant='small' click={(e) => this.handleAddToCart(e, this.props.post)}>
               <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> Dodaj do koszyka
             </Button>

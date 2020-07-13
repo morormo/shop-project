@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './CartPage.module.scss';
 import { Link } from 'react-router-dom';
 import AddToCart from '../../features/AddToCart/AddToCartContainer';
+import { Banner } from '../../features/Banner/Banner';
 
 class CartPage extends React.Component {
 
@@ -14,16 +15,19 @@ class CartPage extends React.Component {
     // const cartItems = JSON.parse(localStorage.getItem('cart')) ? JSON.parse(localStorage.getItem('cart')) : [];
     const cartItems = this.props.cart.cartItems;
     return (
+      <div>
+      <Banner />
       <div className='container'>
         <h1>TWÓJ KOSZYK</h1>
         <div className='row'>
           <div className={`col-lg-6`}>
             {cartItems.length === 0 ?
-              <div>
-                Cart is empty
+              <div className={styles.empty}>
+                Koszyk jest pusty
               </div>
               :
               cartItems.map(item =>
+
                 <div key={item._id} className={`row ${styles.item}`}>
                   <div className={`col-3 ${styles.image}`}>
                     <img src={item.image} alt={item.name} />
@@ -33,31 +37,37 @@ class CartPage extends React.Component {
                       <div className='col-6'>
                         <h3>{item.name}</h3>
                       </div>
-                      <div className={`col-5 ${styles.prize}`}>
-                        {item.prize}PLN
-                      </div>
-                      <div className='col-1'>
-                        <button type="button" className="button" onClick={this.removeFromCart.bind(this, item._id)} >
+                      <div className='col-1 offset-4 offset-md-5'>
+                        <button type="button" className="button" onClick={this.removeFromCart.bind(this, item.id)} >
                           X
                         </button>
                       </div>
+                      <div className={`col-12 ${styles.price}`}>
+                        {item.price}PLN
+                      </div>
+
                     </div>
                     <div>
-                      Ilość: <AddToCart product={cartItems} btn='hidden' counter='' value={item.qty} />
+                      <div className='row'>
+                        <div className='col-12 col-lg-4'>
+                        Ilość: <AddToCart post={item} btn='hidden' counter='' value={item.qty} />
+                        </div>
+                        <div className='col-12 col-lg-8'>
+                          <form>
+                            <input type="text" className="form-description" id="description" placeholder="Dodaj uwagi" name='description' />
+                          </form>
+                        </div>
+                      </div>
                     </div>
                     <div>
-                    Suma: ({item.prize * item.qty}PLN)
+                    Suma: ({item.price * item.qty}PLN)
                     </div>
                   </div>
                 </div>
               )
             }
           </div>
-          {cartItems.length === 0 ?
-            <div>
-
-            </div>
-            :
+          {cartItems.length !== 0 &&
             <div className='col-lg-6'>
               <div className={styles.continue}>
                 <Link to={'/'}>
@@ -74,16 +84,6 @@ class CartPage extends React.Component {
               </div>
               <div className={styles.summary}>
                 <h5>PODSUMOWANIE ZAMÓWIENIA</h5>
-                {cartItems.map(item =>
-                  <div key={item.id} className={`row ${styles.summaryitem}`}>
-                    <div className='col-9'>
-                      CENA
-                    </div>
-                    <div className='col-3'>
-                      {item.prize}
-                    </div>
-                  </div>
-                )}
                 <div className={`row ${styles.summaryitem}`}>
                   <div className='col-9'>
                     ILOŚĆ
@@ -105,7 +105,7 @@ class CartPage extends React.Component {
                     RAZEM
                   </div>
                   <div className='col-3'>
-                    razem
+                    {cartItems.reduce((previousPrice, currentPrice) => previousPrice + currentPrice.price * currentPrice.qty, 0).toFixed(2)} PLN
                   </div>
                 </div>
               </div>
@@ -113,6 +113,7 @@ class CartPage extends React.Component {
           }
         </div>
 
+      </div>
       </div>
     );
   }
