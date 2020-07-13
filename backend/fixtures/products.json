@@ -1,23 +1,23 @@
 [
   {
     "id": 1,
-    "name": "Biała koszulka",
+    "name": "Koszulka",
     "price": "129.99",
     "image": "/photo/koszulka.jpg",
     "countInStock": 3
   },
   {
     "id": 2,
-    "name": "Biała bluza",
+    "name": "Bluza",
     "price": "229.99",
     "image": "/photo/bluza.jpg",
     "countInStock": 2
   },
   {
     "id": 3,
-    "name": "Biały kubek",
-    "price": "69.99",
-    "image": "/photo/kubek.jpg",
+    "name": "Skarpety",
+    "price": "29.99",
+    "image": "/photo/skarpety.jpg",
     "countInStock": 5
   }
 ]

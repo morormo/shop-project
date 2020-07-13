@@ -12,7 +12,6 @@ const Component = () => (
     <div className='container'>
       <div className='row align-item-center'>
         <div className='col'>
-          Logo
         </div>
         <div className={`col-auto ${styles.menu}`} >
           <ul>
