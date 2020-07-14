@@ -16,58 +16,58 @@ class CartPage extends React.Component {
     const cartItems = this.props.cart.cartItems;
     return (
       <div>
-      <Banner />
-      <div className='container'>
-        <h1>TWÓJ KOSZYK</h1>
-        <div className='row'>
-          <div className={`col-lg-6`}>
-            {cartItems.length === 0 ?
-              <div className={styles.empty}>
-                Koszyk jest pusty
-              </div>
-              :
-              cartItems.map(item =>
-
-                <div key={item._id} className={`row ${styles.item}`}>
-                  <div className={`col-3 ${styles.image}`}>
-                    <img src={item.image} alt={item.name} />
-                  </div>
-                  <div className='col-9'>
-                    <div className='row align-item-center'>
-                      <div className='col-6'>
-                        <h3>{item.name}</h3>
-                      </div>
-                      <div className='col-1 offset-4 offset-md-5'>
-                        <button type="button" className="button" onClick={this.removeFromCart.bind(this, item.id)} >
-                          X
-                        </button>
-                      </div>
-                      <div className={`col-12 ${styles.price}`}>
-                        {item.price}PLN
-                      </div>
-
-                    </div>
-                    <div>
-                      <div className='row'>
-                        <div className='col-12 col-lg-4'>
-                        Ilość: <AddToCart post={item} btn='hidden' counter='' value={item.qty} />
-                        </div>
-                        <div className='col-12 col-lg-8'>
-                          <form>
-                            <input type="text" className="form-description" id="description" placeholder="Dodaj uwagi" name='description' />
-                          </form>
-                        </div>
-                      </div>
-                    </div>
-                    <div>
-                    Suma: ({item.price * item.qty}PLN)
-                    </div>
-                  </div>
+        <Banner />
+        <div className='container'>
+          <h1>TWÓJ KOSZYK</h1>
+          <div className='row'>
+            <div className={`col-lg-6`}>
+              {cartItems.length === 0 ?
+                <div className={styles.empty}>
+                  Koszyk jest pusty
                 </div>
-              )
-            }
-          </div>
-          {cartItems.length !== 0 &&
+                :
+                cartItems.map(item =>
+
+                  <div key={item._id} className={`row ${styles.item}`}>
+                    <div className={`col-3 ${styles.image}`}>
+                      <img src={item.image} alt={item.name} />
+                    </div>
+                    <div className='col-9'>
+                      <div className='row align-item-center'>
+                        <div className='col-6'>
+                          <h3>{item.name}</h3>
+                        </div>
+                        <div className='col-1 offset-4 offset-md-5'>
+                          <button type="button" className="button" onClick={this.removeFromCart.bind(this, item.id)} >
+                            X
+                          </button>
+                        </div>
+                        <div className={`col-12 ${styles.price}`}>
+                          {item.price}PLN
+                        </div>
+
+                      </div>
+                      <div>
+                        <div className='row'>
+                          <div className='col-12 col-lg-4'>
+                          Ilość: <AddToCart post={item} btn='hidden' counter='' value={item.qty} />
+                          </div>
+                          <div className='col-12 col-lg-8'>
+                            <form>
+                              <input type="text" className="form-description" id={item.id} placeholder="Dodaj uwagi" name='description' />
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                      Suma: ({item.price * item.qty}PLN)
+                      </div>
+                    </div>
+                  </div>
+                )
+              }
+            </div>
+            {cartItems.length !== 0 &&
             <div className='col-lg-6'>
               <div className={styles.continue}>
                 <Link to={'/'}>
@@ -110,10 +110,9 @@ class CartPage extends React.Component {
                 </div>
               </div>
             </div>
-          }
+            }
+          </div>
         </div>
-
-      </div>
       </div>
     );
   }

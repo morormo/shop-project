@@ -8,5 +8,29 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.16.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyC-GougRZE7MwCCzP3TxhUzF6mfZC7saLY",
+        authDomain: "project-shop-7378b.firebaseapp.com",
+        databaseURL: "https://project-shop-7378b.firebaseio.com",
+        projectId: "project-shop-7378b",
+        storageBucket: "project-shop-7378b.appspot.com",
+        messagingSenderId: "526473437801",
+        appId: "1:526473437801:web:a8e03b7661aecd92e678f8",
+        measurementId: "G-P693Y6R6CD"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
