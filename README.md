@@ -1,6 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-https://shop-project-8e8ae.web.app/
 
 ## Available Scripts
 
