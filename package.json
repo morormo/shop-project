@@ -50,7 +50,7 @@
     "cors": "2.8.5",
     "enzyme": "^3.10.0",
     "enzyme-adapter-react-16": "^1.15.1",
-    "express": "4.17.1",
+    "express": "4.17.3",
     "express-formidable": "^1.2.0",
     "express-session": "^1.17.1",
     "mongodb": "3.3.2",
